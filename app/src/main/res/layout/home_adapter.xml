@@ -9,43 +9,38 @@
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp">
 
         <android.support.v7.widget.CardView
             android:id="@+id/my_card_view"
-            android:layout_width="190dp"
-            android:layout_height="200dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:elevation="5dp"
             android:layout_marginTop="10dp"
-            android:elevation="3dp"
-            app:cardCornerRadius="15dp">
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="5dp">
 
             <ImageView
                 android:id="@+id/imageView_ID"
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                android:src="@mipmap/ic_launcher" />
+                android:layout_width="180dp"
+                android:scaleType="fitXY"
+                android:layout_alignParentTop="true"
+                android:layout_height="match_parent"
+                android:src="@drawable/furniture"  />
 
-            <LinearLayout
+
+            <TextView
+                android:id="@+id/textView_ID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/textView_ID"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="160dp"
-                    android:gravity="center"
-                    android:paddingTop="5dp"
-                    android:text="Title"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
-
-            </LinearLayout>
-
-
+                android:layout_gravity="bottom|center"
+                android:text="Title"
+                android:textSize="14sp"
+                android:layout_alignParentBottom="true"
+                android:background="#ffffff"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
         </android.support.v7.widget.CardView>
     </FrameLayout>

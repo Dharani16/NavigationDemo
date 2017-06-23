@@ -1,9 +1,5 @@
 package com.dharani.navigationdemo;
 
-/**
- * Created by LENOVO on 06/15/17.
- */
-
 public class AndroidVersion  {
     private String androidVersionName;
     private String androidImage;

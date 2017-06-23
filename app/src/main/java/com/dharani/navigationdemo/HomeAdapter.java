@@ -1,6 +1,7 @@
 package com.dharani.navigationdemo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,9 @@ import java.util.ArrayList;
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     private ArrayList<AndroidVersion> android;
+    private String[] dataSet;
     private Context context;
+    AndroidVersion av;
 
     public HomeAdapter(Context context, ArrayList<AndroidVersion> android) {
         this.android = android;
@@ -31,7 +34,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Item clicked !!!", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(context,""+android.get(0).getAndroidVersionName() , Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context,ElectronicsProduct.class);
+                context.startActivity(intent);
             }
         });
         return vHolder;
@@ -44,9 +49,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
                 .load(android.get(position).getAndroidImage())
                 .resize(140,120)
                 .into(holder.imgAndroid);
-
-
     }
+
     @Override
     public int getItemCount() {
         return android.size();

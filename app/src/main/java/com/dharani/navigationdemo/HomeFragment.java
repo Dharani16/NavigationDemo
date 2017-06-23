@@ -15,28 +15,34 @@ import android.widget.ViewFlipper;
 
 import java.util.ArrayList;
 
+import static com.dharani.navigationdemo.MyData.productImage;
+import static com.dharani.navigationdemo.MyData.productName;
+
 public class HomeFragment extends Fragment {
     View view;
     ViewFlipper viewFlipper;
     Toolbar toolbar;
     CollapsingToolbarLayout collapsingToolbarLayout;
-    int images[] = {R.drawable.ecommerce,R.drawable.electronics,R.drawable.furniture};
-    private final String android_version_names[] = {
-            "Electronics",
-            "Home Appliances",
-            "Furnitures",
-            "Home Appliances",
-            "Furnitures",
-            "Dress"};
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+//    int flipperImages[] = {R.drawable.ecommerce,R.drawable.electronics,R.drawable.furniture};
 
-    private final String android_image_urls[] = {
-            "http://api.androidhive.info/json/movies/1.jpg",
-            "http://api.androidhive.info/json/movies/1.jpg",
-            "http://api.androidhive.info/json/movies/1.jpg",
-            "http://api.androidhive.info/json/movies/1.jpg",
-            "http://api.androidhive.info/json/movies/1.jpg",
-            "http://api.androidhive.info/json/movies/1.jpg"
-    };
+//    private final String productName[] = {
+//            "Electronics",
+//            "Home Appliances",
+//            "Furnitures",
+//            "Home Appliances",
+//            "Furnitures",
+//            "Dress"};
+//
+//    private final String productImage[] = {
+//            "http://api.androidhive.info/json/movies/1.jpg",
+//            "http://api.androidhive.info/json/movies/1.jpg",
+//            "http://api.androidhive.info/json/movies/1.jpg",
+//            "http://api.androidhive.info/json/movies/1.jpg",
+//            "http://api.androidhive.info/json/movies/1.jpg",
+//            "http://api.androidhive.info/json/movies/1.jpg"
+//    };
 
     @Nullable
     @Override
@@ -45,24 +51,24 @@ public class HomeFragment extends Fragment {
         viewFlipper = (ViewFlipper)view.findViewById(R.id.viewFlipper_ID);
         collapsingToolbarLayout = (CollapsingToolbarLayout)view.findViewById(R.id.collapsingToolbar);
 
-        for (int i = 0; i < images.length; i++){
-            setFlipperImage(images[i]);
+        for (int i = 0; i < MyData.flipperImages.length; i++){
+            setFlipperImage(MyData.flipperImages[i]);
         }
         initViews();
         return view;
     }
 
     private void initViews() {
-        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView_ID);
+        recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView_ID);
         recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
+        layoutManager = new GridLayoutManager(getActivity(), 2);
         recyclerView.setLayoutManager(layoutManager);
 
         ArrayList<AndroidVersion> android_version = new ArrayList<>();
-        for (int i = 0; i < android_version_names.length; i++) {
+        for (int i = 0; i < productName.length; i++) {
             AndroidVersion androidVersion = new AndroidVersion();
-            androidVersion.setAndroidVersionName(android_version_names[i]);
-            androidVersion.setAndroidImage(android_image_urls[i]);
+            androidVersion.setAndroidVersionName(productName[i]);
+            androidVersion.setAndroidImage(productImage[i]);
             android_version.add(androidVersion);
         }
 
