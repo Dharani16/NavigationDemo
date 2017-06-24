@@ -1,4 +1,4 @@
-package com.dharani.navigationdemo;
+package com.dharani.navigationdemo.activity;
 
 /**
  * Created by LENOVO on 06/20/17.

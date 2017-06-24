@@ -1,4 +1,4 @@
-package com.dharani.navigationdemo;
+package com.dharani.navigationdemo.data;
 
 public class AndroidVersion  {
     private String androidVersionName;

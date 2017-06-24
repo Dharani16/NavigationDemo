@@ -1,10 +1,13 @@
-package com.dharani.navigationdemo;
+package com.dharani.navigationdemo.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ViewFlipper;
+
+import com.dharani.navigationdemo.R;
+import com.dharani.navigationdemo.adapter.ProductsShowAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

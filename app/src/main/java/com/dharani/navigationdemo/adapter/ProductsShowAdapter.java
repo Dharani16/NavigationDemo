@@ -1,6 +1,7 @@
-package com.dharani.navigationdemo;
+package com.dharani.navigationdemo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.dharani.navigationdemo.activity.AboutProductActivity;
+import com.dharani.navigationdemo.activity.ProductItems;
+import com.dharani.navigationdemo.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +50,13 @@ public class ProductsShowAdapter extends RecyclerView.Adapter<ProductsShowAdapte
             priceValue = (TextView) itemView.findViewById(R.id.price_value);
             rating = (RatingBar) itemView.findViewById(R.id.rating_bar);
             recycleView = (RecyclerView) itemView.findViewById(R.id.product_populate);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, AboutProductActivity.class);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 
